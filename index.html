@@ -1,19 +1,7 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+Income is often an economic indicator for how well a region is doing. In this analysis, our team explored models and features that are strong predictors of income per capita and median income in New York City. The dataset we used came from the 2015 American Community Survey 5-Year Estimates. The analysis involved the follow steps: cleaning/exploring the dataset, developing hypotheses, constructing predictive machine learning models, and evaluating the results.
 
-  <title>Predicting Income in NYC</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+We began our analysis by plotting each of the potential predictor variables in the dataset against the response variable (income per capita and median income for each census tract of the city) as well as plotting a histogram of the predictor variables themselves. This allowed us to determine which variables are correlated with the response variables and would therefore be helpful to include in our models. It also gave us an idea of what type of relationship the predictor had to the response, and therefore what transformations might be useful in order to satisfy the assumptions of OLS linear regression. 
 
-<body>
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+Income per capita is severely left skewed (Figure 1), which will lead to issues when fitting a linear regression with income per capita as the response. A log transformation makes the distribution look much more like a Gaussian (Figure 2). We noticed similar distributions for median income.
